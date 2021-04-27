@@ -3,6 +3,7 @@ package roboter;
 import robocode.AdvancedRobot;
 import robocode.HitByBulletEvent;
 import robocode.HitWallEvent;
+import robocode.ScannedRobotEvent;
 
 public class Umrandungsbot extends AdvancedRobot{
 
@@ -17,6 +18,7 @@ public class Umrandungsbot extends AdvancedRobot{
 		turnLeft = 0;
 		double change = getHeading() - 90;
 		turnLeft(change);
+		turnGunRight(90);
 		
 		while(true) {
 			if(turnRight == 1) {
@@ -45,10 +47,17 @@ public class Umrandungsbot extends AdvancedRobot{
 		if(turnDirection == 1) {
 			turnDirection = 2;
 			turnRight(180);
+			turnGunRight(180);
 		} else {
 			turnDirection = 1;
 			turnLeft(180);
+			turnGunLeft(180);
 		}
+	}
+	
+	@Override
+	public void onScannedRobot(ScannedRobotEvent e) {
+		fire(1);
 	}
 	
 }
