@@ -46,16 +46,20 @@ public class Tastaturbot extends AdvancedRobot {
 	@Override
 	public void onKeyPressed(KeyEvent e) {
 		switch(e.getKeyCode()) {
-			case KeyEvent.VK_A: //h
+			case KeyEvent.VK_H: //h
+			case KeyEvent.VK_A:
 				turnDirection = -1;
 				break;
-			case KeyEvent.VK_D: //j
+			case KeyEvent.VK_J: //j
+			case KeyEvent.VK_D:
 				turnDirection = 1;
 				break;
-			case KeyEvent.VK_W: //k
+			case KeyEvent.VK_K: //k
+			case KeyEvent.VK_W:
 				moveDirection = 1;
 				break;
-			case KeyEvent.VK_S: //l
+			case KeyEvent.VK_L: //l
+			case KeyEvent.VK_S:
 				moveDirection = -1;
 				break;
 			case KeyEvent.VK_SPACE:
@@ -71,10 +75,14 @@ public class Tastaturbot extends AdvancedRobot {
 	@Override
 	public void onKeyReleased(KeyEvent e) {
 		switch(e.getKeyCode()) {
+		case KeyEvent.VK_H:
+		case KeyEvent.VK_J:
 		case KeyEvent.VK_A:
 		case KeyEvent.VK_D:
 			turnDirection = 0;
 			break;
+		case KeyEvent.VK_K:
+		case KeyEvent.VK_L:
 		case KeyEvent.VK_W:
 		case KeyEvent.VK_S:
 			moveDirection = 0;
